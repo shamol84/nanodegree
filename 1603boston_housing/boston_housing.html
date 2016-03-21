@@ -1683,7 +1683,9 @@ Testing error is high in the beginning and testing error drops rapidly upto 50 d
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> For max depth =1, the model suffers from high bias and for max depth = 10, model suffers from high variance. For max depth =1, the tree length/depth is probably too shallow for it to learn the relationships inside the data. For max depth = 10, the predictive model is overfitted i.e. testing error is significantly large while training error is very small.</p>
+<p><strong>Answer: </strong> For max depth =1, the model suffers from high bias and for max depth = 10, the model suffers from high variance.</p>
+<p>For max depth =1, both training and testing errors are very large in the begining and the errors converge when 'Total Error' = 50 (approx.) at data points 150 (approx.). After that, if we increase the number of data points, neither training nor testing error improve.  That means the max depth=1 is probably too shallow for it to learn the relationships inside the data. The convergent error value 50 is relatively higher compare to the errors from other tree depths.</p>
+<p>For max depth = 10, the predictive model is overfitted i.e. testing error is significantly large while training error is very small.</p>
 
 </div>
 </div>
