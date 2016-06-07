@@ -578,16 +578,24 @@ In order overcome this issue, we applied Stratified Shuffle Split from scikit-le
 <p>Random forest classifier is an ensemble learning method that operates by constructing a number of decision tress on various sub-sample of input dataset and use average of the prediction as the final prediction output.
 Strengths:</p>
 <ol>
-<li>Random forest can deal with unbalanced data.</li>
+<li>Random forest can deal with unbalanced data. It has methods for balancing error in class population unbalanced data sets [1]</li>
 <li>Runs efficiently on large dataset with numerous number of input features</li>
 <li>Robust against outliers.</li>
-<li>Do not overfit like decision tress.</li>
+<li>Do not overfit like decision tress [2].</li>
+<li>Provides an estimate of variable importance. </li>
 </ol>
 <p>Weakness:</p>
 <ol>
 <li>The process is very computation intensive.</li>
 <li>Usually require large dataset.</li>
 <li>Prone to overfitting when it is applied outside the range of training dataset.</li>
+<li>Difficult to interpret.</li>
+</ol>
+<p>Application of Random Forest:</p>
+<ol>
+<li>Process fault detection/diagnosis in semiconductor and automotive industry[3]</li>
+<li>Body movement prediction for microsoft kinect [4].</li>
+<li>Bio-informatics [5].</li>
 </ol>
 <p>Why random forest?
 Although the dataset is small, I decided to apply Random Forest for following reasons:</p>
@@ -595,19 +603,26 @@ Although the dataset is small, I decided to apply Random Forest for following re
 <li>To check Random Forest classifier’s performance on small datasets with large number of features.</li>
 <li>To check whether a computation intensive Random Forest classifier is a viable option against other simple classifier under given budget constraints.</li>
 </ol>
-<p>Naive Bayes Classifier
+<p>Naive Bayes Classifier 
 The Naive Bayesian classifier is based on Bayes’ theorem with naïve assumptions of independence between the features. 
-Strengths:</p>
+Strengths [6]:</p>
 <ol>
 <li>Extremely fast even with very large dataset.</li>
 <li>Can work with small dataset.</li>
 <li>Easy to implement.</li>
-<li>Robust to noise</li>
+<li>Robust to noise. </li>
 </ol>
 <p>Weakness:</p>
 <ol>
 <li>In practice, naïve assumptions of independence between the features is very rare.</li>
 <li>Shows poor performance in case of nonlinear classification problems.</li>
+</ol>
+<p>Application of Naive Bayes [7]:</p>
+<ol>
+<li>Text classification.</li>
+<li>Spam filtering.</li>
+<li>Sentiment analysis.</li>
+<li>Online marketing.</li>
 </ol>
 <p>Why Naive Bayes:</p>
 <ol>
@@ -616,16 +631,24 @@ Strengths:</p>
 </ol>
 <p>Support vector machine (SVM) classifier
 SVM classifier is a non-probabilistic parametric based classifier for supervised learning.  It constructs linear hyperplane or set of hyperplanes for separating data points. Linear hyperplanes are used through the kernels for nonlinear classification problems.
-Strengths:</p>
+Strengths[8]:</p>
 <ol>
 <li>High accuracy.</li>
 <li>Works well with unbalanced data.</li>
 <li>Do not suffer from multicollinearity.</li>
 </ol>
-<p>Weakness:</p>
+<p>Weakness [8]:</p>
 <ol>
-<li>Time consuming process</li>
+<li>Time consuming process.</li>
+<li>Process complexity increases nonlinearly with large dataset [9].</li>
 <li>Picking/finding the right kernel can be a challenge</li>
+</ol>
+<p>Application of SVM:</p>
+<ol>
+<li>Financial time series prediction [10].</li>
+<li>Sentiment analysis.</li>
+<li>Pattern recogmition [9].</li>
+<li>Oil and gas industry</li>
 </ol>
 <p>Why SVM:
 SVM is chosen because:</p>
@@ -1128,19 +1151,19 @@ Summary Table
 <li>Fine-tune the model. Use Gridsearch with at least one important parameter tuned and with at least 3 settings. Use the entire training set for this.</li>
 </ul>
 <h4 id="Ans:">Ans:<a class="anchor-link" href="#Ans:">&#182;</a></h4><p>SVM is a linear classification technique which assume that your data are linearly separable. SVM works on the principle of margin maximization i.e. it involves finding the hyperplane that best separates two classes of points with the maximum margin. Essentially, it is a constrained optimization problem where the margin is maximized subject to the constraint. Maximized margin makes the probability of missclassifying test data lower.</p>
-<p>For example lets consider a 2-D case, where we have to classify points of two classes(class 1: green and  and class 2: red) distributed in x-y plane (figure 1). These two classes of point can be linearly seperable by infinite number of lines. However, SVM will search for an optimum line/hyperplane that seperates the instances by a maximum margin (figure 2). For 3-D problem, SVM will search for plane; and for higher dimensional problems, SVM will search for hyperplane higher dimension.</p>
-<p>However, in some cases, the classes are not lineary seperable.  For example, linear decision surface does not exist for the classification problem shown in figure 3. In that case, the data is mapped into higher dimensional feature space so that a linear separation surface can be found (figure 4).This is also known as 'kernel trick' of SVM. Some popular Kernels are: Polynomial, Radial Basis Function (RBF) and Sigmoid.</p>
-<p>Since we are dealing with a multidimensional problem, SVM will try to find the hpyperplane that maximizes the differences between graduated and non-graduated students.</p>
+<p>SVM is a linear seperation classification techniques. Lets explain its principle with following example where we want to classify points of two classes: class 1-green and  and class 2-red (figure 1). These two classes of point can be linearly seperable by infinite number of lines. However, SVM will search for a line that seperates the two classes by a maximum margin and for this example, the maximum margin line solid black line in figure 2. Generally, SVM try to draw curve between different features to seperate different classes for two dimensional problem. For higher dimensional problem, SVM will try to find a surface between all the dimensions to seperate different classes of point.</p>
+<p>However, in some cases, the classes are not lineary seperable.  For example, linear seperation line/plane does not exist for the classification problem shown in figure 3. In that case, the data is mapped into higher dimensional feature space so that a linear separation plane can be found (figure 4).This is also known as 'kernel trick' of SVM. Some popular Kernels are: Polynomial, Radial Basis Function (RBF) and Sigmoid [11,12].</p>
+<p>Since our classification problem is multidimensional problem, we well try to the surface that best seperates the graduate and non-graduate students.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="p">(</span><span class="s">&quot;Figure1 : A two class Linearly seperable dataset with infinite number of classification lines&quot;</span><span class="p">)</span> 
+<div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="p">(</span><span class="s">&quot;Figure1 : A two class Linearly seperable dataset with infinite number of classification lines [13]&quot;</span><span class="p">)</span> 
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s">&quot;images/svm2.png&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1155,12 +1178,12 @@ Summary Table
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Figure1 : A two class Linearly seperable dataset with infinite number of classification lines
+<pre>Figure1 : A two class Linearly seperable dataset with infinite number of classification lines [13]
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
 
 
 <div class="output_png output_subarea output_execute_result">
@@ -2136,10 +2159,10 @@ AAAAAMZQQAAAAAAYQwEBAAAAYAwFBAAAAIAx/w+PDEy/AA5uAQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="p">(</span><span class="s">&quot;Figure2 : The Decision Boundary of a Linear SVM on a linearly-separable dataset&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="p">(</span><span class="s">&quot;Figure2 : The Decision Boundary of a Linear SVM on a linearly-separable dataset [13]&quot;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s">&quot;images/svm1.png&quot;</span><span class="p">)</span>
 </pre></div>
@@ -2154,12 +2177,12 @@ AAAAAMZQQAAAAAAYQwEBAAAAYAwFBAAAAIAx/w+PDEy/AA5uAQAAAABJRU5ErkJggg==
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Figure2 : The Decision Boundary of a Linear SVM on a linearly-separable dataset
+<pre>Figure2 : The Decision Boundary of a Linear SVM on a linearly-separable dataset [13]
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
 
 
 <div class="output_png output_subarea output_execute_result">
@@ -3838,10 +3861,10 @@ RU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="p">(</span><span class="s">&quot;Figure3 : Linearly inseperable dataset&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="p">(</span><span class="s">&quot;Figure3 : Linearly inseperable dataset [13]&quot;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s">&quot;images/svm5.png&quot;</span><span class="p">)</span>
 </pre></div>
@@ -3856,12 +3879,12 @@ RU5ErkJggg==
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Figure3 : Linearly inseperable dataset
+<pre>Figure3 : Linearly inseperable dataset [13]
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
 
 
 <div class="output_png output_subarea output_execute_result">
@@ -6475,10 +6498,10 @@ AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="p">(</span><span class="s">&quot;Figure3 : Applying polynomial kernel trict to seperate linearly inseperable dataset&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="p">(</span><span class="s">&quot;Figure3 : Applying polynomial kernel trict to seperate linearly inseperable dataset [13]&quot;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s">&quot;images/svm7.png&quot;</span><span class="p">)</span>
 </pre></div>
@@ -6493,12 +6516,12 @@ AAAAAElFTkSuQmCC
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Figure3 : Applying polynomial kernel trict to seperate linearly inseperable dataset
+<pre>Figure3 : Applying polynomial kernel trict to seperate linearly inseperable dataset [13]
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[30]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
 
 
 <div class="output_png output_subarea output_execute_result">
@@ -10462,7 +10485,7 @@ rkJggg==
 <li><p>What is the model's final F<sub>1</sub> score?</p>
 </li>
 </ul>
-<h4 id="Ans:">Ans:<a class="anchor-link" href="#Ans:">&#182;</a></h4><p>After a thorough grid-search, final F<sub>1</sub> score is 0.871, which is very small improvement over the previous model.</p>
+<h4 id="Ans:">Ans:<a class="anchor-link" href="#Ans:">&#182;</a></h4><p>After a thorough grid-search, final F<sub>1</sub> score is 0.821, which is very small improvement over the previous model.</p>
 
 </div>
 </div>
@@ -10560,13 +10583,41 @@ SVC(C=0.01, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0,
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="References:">References:<a class="anchor-link" href="#References:">&#182;</a></h4><ol>
-<li><a href="http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html">http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html</a></li>
-<li><a href="https://panthimanshu17.wordpress.com/2013/07/28/svm-fundamentals-part-1/">https://panthimanshu17.wordpress.com/2013/07/28/svm-fundamentals-part-1/</a></li>
-<li><a href="http://www.support-vector.net/icml-tutorial.pdf">http://www.support-vector.net/icml-tutorial.pdf</a></li>
+<li><a href="http://rstudio-pubs-static.s3.amazonaws.com/4239_fcb292ade17648b097a9806fbe026e74.html">http://rstudio-pubs-static.s3.amazonaws.com/4239_fcb292ade17648b097a9806fbe026e74.html</a></li>
+<li><a href="http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier">http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier</a></li>
+<li><a href="https://scholar.sun.ac.za/handle/10019.1/5360">https://scholar.sun.ac.za/handle/10019.1/5360</a></li>
+<li><a href="http://research.microsoft.com/en-us/projects/decisionforests/">http://research.microsoft.com/en-us/projects/decisionforests/</a></li>
+<li><a href="http://www.cs.cmu.edu/~qyj/papersA08/11-rfbook.pdf">http://www.cs.cmu.edu/~qyj/papersA08/11-rfbook.pdf</a></li>
+<li><a href="http://www.ijcsi.org/papers/4-1-16-23.pdf">http://www.ijcsi.org/papers/4-1-16-23.pdf</a></li>
+<li><a href="http://software.ucv.ro/~cmihaescu/ro/teaching/AIR/docs/Lab4-NaiveBayes.pdf">http://software.ucv.ro/~cmihaescu/ro/teaching/AIR/docs/Lab4-NaiveBayes.pdf</a></li>
+<li><a href="http://u.cs.biu.ac.il/~haimga/Teaching/AI/saritLectures/svm.pdf">http://u.cs.biu.ac.il/~haimga/Teaching/AI/saritLectures/svm.pdf</a></li>
+<li><p><a href="http://www.distilnetworks.com/support-vector-machines-hadoop-theory-vs-practice/#.V1ciD5ErKhc">http://www.distilnetworks.com/support-vector-machines-hadoop-theory-vs-practice/#.V1ciD5ErKhc</a></p>
+</li>
+<li><p><a href="http://www.svms.org/finance/">http://www.svms.org/finance/</a></p>
+</li>
+<li><p><a href="http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html">http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html</a></p>
+</li>
+<li><p><a href="https://panthimanshu17.wordpress.com/2013/07/28/svm-fundamentals-part-1/">https://panthimanshu17.wordpress.com/2013/07/28/svm-fundamentals-part-1/</a></p>
+</li>
+<li><p><a href="http://www.support-vector.net/icml-tutorial.pdf">http://www.support-vector.net/icml-tutorial.pdf</a></p>
+</li>
 </ol>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
