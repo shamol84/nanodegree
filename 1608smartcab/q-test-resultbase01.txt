@@ -1,37 +1,4 @@
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-+ Agent reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-+ Agent reached the destination on time
-+ Agent reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-+ Agent reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-+ Agent reached the destination on time
-+ Agent reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
+alpha 0.3 gamma 0.5
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
 + Agent reached the destination on time
@@ -40,21 +7,25 @@
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
++ Agent reached the destination on time
++ Agent reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
 + Agent reached the destination on time
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
 + Agent reached the destination on time
 - Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
-- Agent hasn't reached the destination on time
++ Agent reached the destination on time
++ Agent reached the destination on time
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
 + Agent reached the destination on time
@@ -65,20 +36,16 @@
 + Agent reached the destination on time
 + Agent reached the destination on time
 + Agent reached the destination on time
-+ Agent reached the destination on time
-- Agent hasn't reached the destination on time
-+ Agent reached the destination on time
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
 + Agent reached the destination on time
 + Agent reached the destination on time
-- Agent hasn't reached the destination on time
 + Agent reached the destination on time
 - Agent hasn't reached the destination on time
 + Agent reached the destination on time
-+ Agent reached the destination on time
 - Agent hasn't reached the destination on time
 + Agent reached the destination on time
+- Agent hasn't reached the destination on time
 + Agent reached the destination on time
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
@@ -89,12 +56,46 @@
 - Agent hasn't reached the destination on time
 + Agent reached the destination on time
 + Agent reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
+- Agent hasn't reached the destination on time
+- Agent hasn't reached the destination on time
+- Agent hasn't reached the destination on time
 + Agent reached the destination on time
 - Agent hasn't reached the destination on time
 + Agent reached the destination on time
 - Agent hasn't reached the destination on time
++ Agent reached the destination on time
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
++ Agent reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
+- Agent hasn't reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
++ Agent reached the destination on time
+- Agent hasn't reached the destination on time
++ Agent reached the destination on time
 - Agent hasn't reached the destination on time
 - Agent hasn't reached the destination on time

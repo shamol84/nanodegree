@@ -13,8 +13,8 @@ class LearningAgent(Agent):
         # TODO: Initialize any additional variables here
         self.Q_learner = {}
         self.reward = 0
-        self.alpha = 0.2
-        self.gamma=0
+        self.alpha = 0.2#0.2, 0.1
+        self.gamma=0 ##no significant effect
         
 
     def reset(self, destination=None):
@@ -29,14 +29,23 @@ class LearningAgent(Agent):
         deadline = self.env.get_deadline(self)
 
         # TODO: Update state
-        
-        # TODO: Select action according to your policy
-        action = random.choice([None, 'forward', 'left', 'right'])
+        self.valid_actions = self.env.valid_actions
 
+        self.state = (inputs['light'], inputs['oncoming'], inputs['left'], inputs['right'], self.next_waypoint)
+                
+        # TODO: Select action according to your policy
+        
+        possible_actions = {action: self.Q_learner.get((self.state, action), 0) for action in self.valid_actions}
+        actions = [action for action in self.valid_actions if possible_actions[action] == max(possible_actions.values())]
+        #action = random.choice([None, 'forward', 'left', 'right'])
+        #action = max(possible_actions.iteritems(), key=lambda x:x[1])[0]
+        action = random.choice(actions)
         # Execute action and get reward
         reward = self.env.act(self, action)
-
+        self.reward +=reward
         # TODO: Learn policy based on state, action, reward
+        # self.alpha * (reward+self.gamma * self.Q_learner.get((self.state_hat, action_hat), 0))
+        self.Q_learner[(self.state, action)] =(1-self.alpha)*self.Q_learner.get((self.state, action), 0)+ self.alpha * reward
 
         print "LearningAgent.update(): deadline = {}, inputs = {}, action = {}, reward = {}".format(deadline, inputs, action, reward)  # [debug]
 
@@ -51,10 +60,10 @@ def run():
     # NOTE: You can set enforce_deadline=False while debugging to allow longer trials
 
     # Now simulate it
-    sim = Simulator(e, update_delay=0.005, display=False)  # create simulator (uses pygame when display=True, if available)
+    sim = Simulator(e, update_delay=0.001, display=False)  # create simulator (uses pygame when display=True, if available)
     # NOTE: To speed up simulation, reduce update_delay and/or set display=False
 
-    sim.run(n_trials=100)  # run for a specified number of trials
+    sim.run(n_trials=10000)  # run for a specified number of trials
     # NOTE: To quit midway, press Esc or close pygame window, or hit Ctrl+C on the command-line
 
 
