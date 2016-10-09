@@ -13,8 +13,8 @@ class LearningAgent(Agent):
         # TODO: Initialize any additional variables here
         self.Q_learner = {}
         self.reward = 0
-        self.alpha = 0.2#0.2, 0.1
-        self.gamma=0 ##no significant effect
+        self.alpha = 0.6#0.2, 0.1,0.5,0.7
+        self.gamma=0 ##no significant effects!!
         
 
     def reset(self, destination=None):
@@ -35,16 +35,18 @@ class LearningAgent(Agent):
                 
         # TODO: Select action according to your policy
         
-        possible_actions = {action: self.Q_learner.get((self.state, action), 0) for action in self.valid_actions}
-        actions = [action for action in self.valid_actions if possible_actions[action] == max(possible_actions.values())]
+        available_actions = {action: self.Q_learner.get((self.state, action), 0) for action in self.valid_actions} # find all the actions and q-value in particular state
+        actions = [action for action in self.valid_actions if available_actions[action] == max(available_actions.values())] ## choose action using max q-value
         #action = random.choice([None, 'forward', 'left', 'right'])
-        #action = max(possible_actions.iteritems(), key=lambda x:x[1])[0]
-        action = random.choice(actions)
+        #action = max(available_actions.iteritems(), key=lambda x:x[1])[0] ## find actions with max q-value
+        action = random.choice(actions) #choose random action in can case same max q value is observed for multiple actions in the same iteration
+
+        
         # Execute action and get reward
         reward = self.env.act(self, action)
         self.reward +=reward
         # TODO: Learn policy based on state, action, reward
-        # self.alpha * (reward+self.gamma * self.Q_learner.get((self.state_hat, action_hat), 0))
+        # self.alpha * (reward+self.gamma * self.Q_learner.get((self.state_hat, action_hat), 0)) ## q - learning 
         self.Q_learner[(self.state, action)] =(1-self.alpha)*self.Q_learner.get((self.state, action), 0)+ self.alpha * reward
 
         print "LearningAgent.update(): deadline = {}, inputs = {}, action = {}, reward = {}".format(deadline, inputs, action, reward)  # [debug]
@@ -60,10 +62,10 @@ def run():
     # NOTE: You can set enforce_deadline=False while debugging to allow longer trials
 
     # Now simulate it
-    sim = Simulator(e, update_delay=0.001, display=False)  # create simulator (uses pygame when display=True, if available)
+    sim = Simulator(e, update_delay=0.0001, display=False)  # create simulator (uses pygame when display=True, if available)
     # NOTE: To speed up simulation, reduce update_delay and/or set display=False
 
-    sim.run(n_trials=10000)  # run for a specified number of trials
+    sim.run(n_trials=100)  # run for a specified number of trials
     # NOTE: To quit midway, press Esc or close pygame window, or hit Ctrl+C on the command-line
 
 

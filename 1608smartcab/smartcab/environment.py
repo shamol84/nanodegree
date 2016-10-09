@@ -134,7 +134,7 @@ class Environment(object):
             if self.enforce_deadline and self.agent_states[self.primary_agent]['deadline'] <= 0:
                 self.done = True
                 print "Environment.reset(): Primary agent could not reach destination within deadline!"
-                with open('q-test-result05.txt', 'a') as file:
+                with open('q-test-en-6.txt', 'a') as file:
                     file.write("- Primary agent could not reach destination within deadline\n")
             self.agent_states[self.primary_agent]['deadline'] -= 1
 
@@ -220,7 +220,7 @@ class Environment(object):
                     reward += 10  # bonus
                 self.done = True
                 print "Environment.act(): Primary agent has reached destination!"  # [debug]
-                with open('q-test-result05.txt', 'a') as file:
+                with open('q-test-en-6.txt', 'a') as file:
                     file.write("+ Primary agent reached the destination on time\n")
             self.status_text = "state: {}\naction: {}\nreward: {}".format(agent.get_state(), action, reward)
             #print "Environment.act() [POST]: location: {}, heading: {}, action: {}, reward: {}".format(location, heading, action, reward)  # [debug]
