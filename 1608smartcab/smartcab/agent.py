@@ -31,7 +31,7 @@ class LearningAgent(Agent):
         # TODO: Update state
         self.valid_actions = self.env.valid_actions
 
-        self.state = (inputs['light'], inputs['oncoming'], inputs['left'], inputs['right'], self.next_waypoint)
+        self.state = (inputs['light'], inputs['oncoming'], inputs['left'], self.next_waypoint)
                 
         # TODO: Select action according to your policy
         
