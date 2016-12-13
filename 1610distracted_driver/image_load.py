@@ -9,7 +9,7 @@ sz = (img_size, img_size)
 nprocs = 2
 
 
-def process_image(img_file):
+def resize_image(img_file):
     img = cv2.imread(img_file)
     img = cv2.resize(img, sz).transpose((2,0,1)).astype('float32') / 255.0
     return img
@@ -23,7 +23,7 @@ for j in range(10):
     print('Load folder c{}'.format(j))
     path = os.path.join('../input/train', 'c' + str(j), '*.jpg')
     files = glob.glob(path)
-    X_train.extend(Parallel(n_jobs=nprocs)(delayed(process_image)(im_file) for im_file in files))
+    X_train.extend(Parallel(n_jobs=nprocs)(delayed(resize_image)(im_file) for im_file in files))
     Y_train.extend([j]*len(files))
     
 end = time.time() - start
