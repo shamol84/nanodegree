@@ -1,0 +1,8 @@
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+##pickle
+.pkl
+.p
