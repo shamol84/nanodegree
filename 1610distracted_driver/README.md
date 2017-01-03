@@ -3,7 +3,7 @@
 
 ### codes:
 1. data_preprocessing.py: image load, resize, and splitting into train, test and validation data
-2. cnn_processing.py: CNN
+2. cnn_processing.py: Contains CNN architecture, Keras code and evaluation 
 
 ### Required Python Package:
 1. TensorFlow
