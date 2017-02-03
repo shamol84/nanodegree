@@ -17,4 +17,4 @@ In a terminal or command window, navigate to the top-level project directory `sm
 ```python smartcab/agent.py```  
 ```python -m smartcab.agent```
 
-This will run the `agent.py` file and execute your agent code.
+This will run the `agent.py` file from smartcab folder and execute your agent code.
