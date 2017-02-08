@@ -2,29 +2,10 @@
 
 Supervised Learning Project
 
-## Install
+## Requirement
 
 This project requires Python 2.7 and iPython/Jupyter Notebook.
 
-## Code
-
-Template code is provided in the notebook `student_intervention.ipynb`.
-
-To open it, go to the top-level project directory `student_intervention/` and start the notebook server:
-
-```ipython notebook```
-
-OR:
-
-```jupyter notebook```
-
-This should open a web browser to the server's dashboard (typically `http://127.0.0.1:8888`). Click on the appropriate notebook (`.ipynb`) to open it, and follow the instructions.
-
-## Run
-
-To run a code cell in the notebook, hit `Shift+Enter`. Any output will be displayed below the corresponding cell.
-
-You can also add/edit markdown text cells and render them using `Shift+Enter`.
 
 ## Data
 
@@ -64,4 +45,30 @@ The dataset used in this project is included as `student-data.csv`. It has the f
 
 
 
-## References:
+## References:http://rstudio-pubs-static.s3.amazonaws.com/4239_fcb292ade17648b097a9806fbe026e74.html
+http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier
+https://scholar.sun.ac.za/handle/10019.1/5360
+http://research.microsoft.com/en-us/projects/decisionforests/
+http://www.cs.cmu.edu/~qyj/papersA08/11-rfbook.pdf
+http://www.ijcsi.org/papers/4-1-16-23.pdf
+http://software.ucv.ro/~cmihaescu/ro/teaching/AIR/docs/Lab4-NaiveBayes.pdf
+http://u.cs.biu.ac.il/~haimga/Teaching/AI/saritLectures/svm.pdf
+http://www.distilnetworks.com/support-vector-machines-hadoop-theory-vs-practice/#.V1ciD5ErKhc
+http://www.svms.org/finance/
+http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html
+https://panthimanshu17.wordpress.com/2013/07/28/svm-fundamentals-part-1/
+http://www.support-vector.net/icml-tutorial.pdf
+
+http://rstudio-pubs-static.s3.amazonaws.com/4239_fcb292ade17648b097a9806fbe026e74.html
+http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier
+https://scholar.sun.ac.za/handle/10019.1/5360
+http://research.microsoft.com/en-us/projects/decisionforests/
+http://www.cs.cmu.edu/~qyj/papersA08/11-rfbook.pdf
+http://www.ijcsi.org/papers/4-1-16-23.pdf
+http://software.ucv.ro/~cmihaescu/ro/teaching/AIR/docs/Lab4-NaiveBayes.pdf
+http://u.cs.biu.ac.il/~haimga/Teaching/AI/saritLectures/svm.pdf
+http://www.distilnetworks.com/support-vector-machines-hadoop-theory-vs-practice/#.V1ciD5ErKhc
+http://www.svms.org/finance/
+http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html
+https://panthimanshu17.wordpress.com/2013/07/28/svm-fundamentals-part-1/
+http://www.support-vector.net/icml-tutorial.pdf
